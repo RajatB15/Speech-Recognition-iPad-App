@@ -1,0 +1,162 @@
+﻿<?xml 
+  version="1.0" 
+  encoding="UTF-8" 
+?>
+<grammar 
+  version="1.0"
+  xml:lang="en-GB"
+  mode="voice"
+  root= "main"
+    xmlns="http://www.w3.org/2001/06/grammar"
+  tag-format="semantics/1.0"
+>
+
+<!-- Author : N.Holzki, 21-jul-2017, SIEMENS Healthcare GmbH -->
+  
+  <rule id="main">
+    <one-of>
+      <!--1-->
+      <item>  <ruleref uri ="#setHUwindowing" type="application/srgs+xml"/>  </item>
+      <!--2-->
+      <item>  <ruleref uri ="#selectLayout" type="application/srgs+xml"/>  </item>
+      <!--3-->
+      <item>  <ruleref uri ="#selectSlice" type="application/srgs+xml"/>  </item>
+      <!--4-->
+      <item> <ruleref uri ="#selectSaveKey" type="application/srgs+xml"/> </item>
+      <!--5-->
+      <item><ruleref uri ="#ToggleGantryLaser" type="application/srgs+xml"/></item>
+      <!--6-->
+      <item><ruleref uri ="#ShowHideGantryLaser" type="application/srgs+xml"/></item>
+    </one-of>
+  </rule>
+
+  
+  <rule id="setHUwindowing"  >
+  <example> lung window </example>
+    <tag>
+      out.domain="display";
+      out.command = "setHUwindowing";
+      out.HUtype = "";
+    </tag>
+    <item>
+      <one-of> 
+        <item> bone  <tag>out.HUtype = "bone"; </tag>  </item>
+        <item> lung  <tag>out.HUtype = "lung"; </tag>  </item>
+        <item> 
+          <item> soft  </item>
+          <item repeat="0-1"> tissue </item>
+          <tag>out.HUtype = "soft"; </tag>
+        </item>
+      </one-of>
+    </item>
+    <item> window</item>
+  </rule> 
+    
+  <rule id="selectLayout"  >
+    <example> toggle|switch display </example>
+    <example> show planning </example>
+    <tag>
+      out.domain="display";
+      out.command = "selectLayout";
+    </tag>
+    
+    <one-of>
+      <item> toggle </item>
+      <item> switch </item>
+    </one-of>
+    <one-of>
+      <item> display </item>
+      <item> layout </item>
+    </one-of>
+  </rule>
+
+
+  <rule id="selectSlice"  >
+    <example>select head </example>
+    <example>feet segment </example>	  
+    <tag>
+      out.domain="display";
+      out.command = "selectSlice";
+      out.Slice = "";
+    </tag>
+    <item repeat="0-1"> select </item>
+    <one-of> 
+      <item> head   <tag>out.Slice = "head"; </tag>  </item>
+      <item> center <tag>out.Slice = "center"; </tag></item>
+      <item> middle <tag>out.Slice = "center"; </tag></item>
+      <item> feet   <tag>out.Slice = "feet"; </tag></item>
+    </one-of>
+    <item repeat="0-1"> segment </item>
+  </rule>
+
+  <rule id="selectSaveKey"  >
+    <example> take snapshot </example>
+    <tag>
+      out.domain="display";
+      out.command = "selectSaveKey";
+    </tag>
+    <one-of>
+      <item>
+        <item repeat="0-1">Save</item>
+        <item>key</item>
+        <item>image</item>
+      </item>
+      <item>
+        <item>take</item>
+        <item>snapshot</item>
+      </item>
+    </one-of>
+  </rule>
+  
+  <rule id="ToggleGantryLaser"  >
+    <example> Switch laser crosshairs </example>
+    <tag>
+      out.domain="display";
+      out.command ="toggleGantryLaser";
+    </tag>
+    <item>
+      <one-of>
+        <item> switch </item>
+        <item> toggle </item>
+      </one-of>
+      <item>laser</item>
+      <one-of>
+        <item>crosshairs</item>
+        <item>lines</item>
+      </one-of>
+    </item>
+  </rule>
+
+  <rule id="ShowHideGantryLaser"  >
+    <example> Laser crosshairs on/off </example>
+    <tag>
+      out.domain="display";
+      out.command ="showHideGantryLaser";
+      out.Visibility= "";
+    </tag>
+    <one-of>
+      <item>
+        <one-of>
+          <item> show <tag>out.Visibility = "Visible"; </tag></item>
+          <item> hide <tag>out.Visibility = "Hidden"; </tag></item>
+        </one-of>
+        <item>laser</item>
+        <one-of>
+          <item>crosshairs</item>
+          <item>lines</item>
+        </one-of>
+      </item>
+      <item>
+        <item>laser</item>
+        <one-of>
+         <item>lines</item>
+         <item>crosshairs</item>
+        </one-of>
+        <one-of>
+          <item>on <tag>out.Visibility = "Visible"; </tag></item>
+          <item>off<tag>out.Visibility = "Hidden"; </tag></item>
+        </one-of>
+      </item>
+    </one-of>
+  </rule>
+ </grammar>

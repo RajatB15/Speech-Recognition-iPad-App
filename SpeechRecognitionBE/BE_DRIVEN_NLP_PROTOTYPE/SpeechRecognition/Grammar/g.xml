@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<grammar version="1.0" xml:lang="en-US"
+         xmlns="http://www.w3.org/2001/06/grammar"  root="Main">
+
+  <!-- cities.xml:   
+    Defines an SRGS grammar for requesting a flight. This grammar includes  
+    a Cities rule that lists the cities that can be used for departures  
+    and destinations. -->
+  
+  
+  
+  <rule id="Main">
+    <one-of>
+      <item> hello </item>
+      <item> play </item>
+      <item> pause </item>
+      <item> music </item>
+      <item> movie </item>
+    </one-of>
+  </rule>
+</grammar>

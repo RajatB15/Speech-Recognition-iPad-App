@@ -1,0 +1,10 @@
+D:\SpeechRecognition\SpeechRecognition\SpeechRecognition\bin\Debug\SpeechRecognition.exe.config
+D:\SpeechRecognition\SpeechRecognition\SpeechRecognition\bin\Debug\SpeechRecognition.exe
+D:\SpeechRecognition\SpeechRecognition\SpeechRecognition\bin\Debug\SpeechRecognition.pdb
+D:\SpeechRecognition\SpeechRecognition\SpeechRecognition\obj\Debug\SpeechRecognition.csprojAssemblyReference.cache
+D:\SpeechRecognition\SpeechRecognition\SpeechRecognition\obj\Debug\SpeechRecognition.csproj.CoreCompileInputs.cache
+D:\SpeechRecognition\SpeechRecognition\SpeechRecognition\obj\Debug\SpeechRecognition.exe
+D:\SpeechRecognition\SpeechRecognition\SpeechRecognition\obj\Debug\SpeechRecognition.pdb
+C:\Users\Z0041DYB\source\repos\CardLearn\RajatSpeechRecognition2\SpeechRecognition\bin\Debug\SpeechRecognition.exe.config
+C:\Users\Z0041DYB\source\repos\CardLearn\RajatSpeechRecognition2\SpeechRecognition\obj\Debug\SpeechRecognition.exe
+C:\Users\Z0041DYB\source\repos\CardLearn\RajatSpeechRecognition2\SpeechRecognition\obj\Debug\SpeechRecognition.pdb
