@@ -10,44 +10,44 @@ The repo contains code for backend driven speech recognition using MS Speech Lib
 ## RecordRTC
 RecordRTC is a WebRTC JavaScript library for audio/video as well as screen activity recording.
 ### Supported Platforms
-●	Android – audio + video
-●	iOS- audio + video
-●	Windows – only audio 
-●	Browser- audio + video
+1. Android – audio + video
+2. iOS- audio + video
+3. Windows – only audio 
+4. Browser- audio + video
 ### Pros
-●	Lot of documentation 
-●	Easy to use
+1. Lot of documentation 
+2. Easy to use
 ### Cons
-●	Even though the documentation says that RecordRTC supports safari (which is true), it does not support iOS WebView. Hence this API cannot be used.
+1. Even though the documentation says that RecordRTC supports safari (which is true), it does not support iOS WebView. Hence this API cannot be used.
 
 ## Cordova Plugin Media Capture 
 This plugin provides access to the device's audio, image, and video capture capabilities.
 ### Supported Platforms
-●	Android
-●	iOS
-●	Windows
-●	Browser
+1. Android
+2. iOS
+3. Windows
+4. Browser
 ### Pros
-●	Records the file and gives back the location in which the file is stored.
-●	Works perfectly with iOS WebView.
+1. Records the file and gives back the location in which the file is stored.
+2. Works perfectly with iOS WebView.
 ### Cons
-●	Documentation is sufficient but doesn’t clarify usage of few methods.
-●	We do not need to play the audio on frontend, but in case if that is also a requirement, then the code to access the file and play it must be written manually (unlike cordova plugin media).
-●	Multiple buttons to click to record an audio. Also a default user interface pops up upon calling the plugin.
+1. Documentation is sufficient but doesn’t clarify usage of few methods.
+2. We do not need to play the audio on frontend, but in case if that is also a requirement, then the code to access the file and play it must be written manually (unlike cordova plugin media).
+3. Multiple buttons to click to record an audio. Also a default user interface pops up upon calling the plugin.
 
 ## Cordova Plugin Media 
 This plugin provides the ability to record and play back audio files on a device. To read the stored file we use Cordova Plugin Files. 
 ### Supported Platforms 
-●	Android
-●	iOS
-●	Windows
-●	Browser
+1. Android
+2. iOS
+3. Windows
+4. Browser
 ### Pros
-●	It’s a Cordova plugin, so they work well on mobiles/tablets.
-●	Easy to use
-●	Enough documentation
+1. It’s a Cordova plugin, so they work well on mobiles/tablets.
+2. Easy to use
+3. Enough documentation
 ### Cons
-●	While the recording might be easy using this plugin, accessing the recorded file to send it to backend is difficult. Instead of using the default file location to record an audio (the location in which the file will be stored might be difficult to read), it is advised that the programmer set the location in which the file will be stored.
+1. While the recording might be easy using this plugin, accessing the recorded file to send it to backend is difficult. Instead of using the default file location to record an audio (the location in which the file will be stored might be difficult to read), it is advised that the programmer set the location in which the file will be stored.
 
 # Decision on API/Plugin
 We need to record the audio and send it to the backend. This means we will have to access the recorded file which is stored locally. Keeping in mind these factors, we chose cordova plugin media. In this prototype, the recorded files have been stored in ‘cdvfile://localhost/temporary’. 
