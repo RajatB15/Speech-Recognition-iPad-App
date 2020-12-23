@@ -1,4 +1,4 @@
-# BE_DRIVEN_NLP_PROTOTYPE- Speech recording on front end and Speech Recognition on backend
+# Continuous speech recognition app 
 The repo contains code for backend driven speech recognition using MS Speech Liberary and a front end interface written in angular+cordova
 
 # Goal 
