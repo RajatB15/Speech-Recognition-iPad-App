@@ -54,6 +54,8 @@ We need to record the audio and send it to the backend. This means we will have 
 
 # Steps 
 
+![alt text](https://github.com/RajatB15/BE_DRIVEN_NLP_PROTOTYPE/blob/master/Images/Blueprint.PNG)
+
 ## Create UI
 The user interface is controlled by angular. We add a start recording button to trigger the audio recording. Since we are using cordova plugin media for audio recording, the button click triggers the audio recording through media plugin. 
 
@@ -86,8 +88,11 @@ initRecording()
     StartRec();
 }
 ```
-Encoding Audio and sending it through a WebSocket
+
+## Encoding Audio and sending it through a WebSocket
 The recorded audio must be sent to backend for processing, which is in C#. WebSocket can be used to send string, binary or image data to the backend. Since we cannot send audio file to the backend directly, the audio file is encoded and sent. 
+
+![alt text](https://github.com/RajatB15/BE_DRIVEN_NLP_PROTOTYPE/blob/master/Images/ProcessingAudio.PNG)
 
 To encode the audio we use filereader or btoa. The usage of both has been given below
 ```
@@ -120,6 +125,8 @@ if (mod4 > 0)
 
 ## Speech recognition using MS Speech API
 The audio file now should be sent to MS Speech Api to convert it from speech to text. MS Speech Api refers to the grammar ( which is the set of words which are to be recognized). 
+
+![alt text](https://github.com/RajatB15/BE_DRIVEN_NLP_PROTOTYPE/blob/master/Images/HowMSSpeechWorks.PNG)
 
 
 ## Continuous speech recognition
